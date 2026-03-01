@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Shield, Cpu, FileCode2, Lock, GitBranch, ArrowRight, Check, Copy, BookText } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -280,6 +281,51 @@ export default function Home() {
                </pre>
              </div>
            </motion.div>
+        </motion.div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 bg-card/30 overflow-hidden">
+        <motion.div 
+          className="container mx-auto px-6 max-w-4xl"
+          variants={STAGGER_CONTAINER_VARIANTS}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="mb-12 text-center">
+            <h2 className="font-display text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+            <p className="text-muted-foreground">Everything you need to know about protecting your checkout flow.</p>
+          </motion.div>
+
+          <motion.div variants={FADE_UP_ANIMATION_VARIANTS}>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1" className="border-white/10">
+                <AccordionTrigger className="font-display hover:text-accent hover:no-underline">How do I block the Honey extension from stealing coupon codes?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  Extensions like Honey scan the standard React DOM and input field <code className="bg-white/10 px-1 py-0.5 rounded text-white">value</code> attributes. Secure Input moves the plain text processing off the main thread into an isolated Web Worker, meaning these extensions only ever see the encrypted ciphertext.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2" className="border-white/10">
+                <AccordionTrigger className="font-display hover:text-accent hover:no-underline">Does this prevent users from manually sharing promo codes?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  No. Secure Input specifically targets automated DOM scraping and browser extensions. If a legitimate user wants to copy and paste a code to a friend on Reddit, they still can. This library is designed to stop automated mass-leaking at checkout.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3" className="border-white/10">
+                <AccordionTrigger className="font-display hover:text-accent hover:no-underline">Is this library compatible with React and Next.js checkouts?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  Yes, absolutely. We provide a dedicated <code className="bg-white/10 px-1 py-0.5 rounded text-white">@secure-input/react</code> package that handles the Web Worker lifecycle automatically, making it incredibly easy to drop into Next.js, Create React App, or Vite projects.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4" className="border-white/10">
+                <AccordionTrigger className="font-display hover:text-accent hover:no-underline">Can DOM inspectors read the plain text?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  By the time the React state updates, the value has already been sent to the Web Worker and encrypted. The raw string never persists in the observable DOM or standard React DevTools state.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </motion.div>
         </motion.div>
       </section>
 
