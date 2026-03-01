@@ -51,7 +51,7 @@ export default function HowItWorksPage() {
       </p>
       
       <div className="grid md:grid-cols-3 gap-4 not-prose mt-8">
-        <Card className="p-6 rounded-none border-white/10 bg-card hover:border-accent/50 transition-colors tech-border h-full gradient-hover-card">
+              <Card className="p-6 rounded-none border-white/10 bg-card transition-colors tech-border h-full gradient-hover-card">
           <FileCode2 className="w-6 h-6 mb-4 text-accent" />
           <h3 className="font-display font-bold text-lg mb-2">@secure-input/core</h3>
           <p className="text-muted-foreground text-xs leading-relaxed">
@@ -59,7 +59,7 @@ export default function HowItWorksPage() {
           </p>
         </Card>
         
-        <Card className="p-6 rounded-none border-white/10 bg-card hover:border-accent/50 transition-colors tech-border h-full gradient-hover-card">
+              <Card className="p-6 rounded-none border-white/10 bg-card transition-colors tech-border h-full gradient-hover-card">
           <Cpu className="w-6 h-6 mb-4 text-accent" />
           <h3 className="font-display font-bold text-lg mb-2">@secure-input/react</h3>
           <p className="text-muted-foreground text-xs leading-relaxed">
@@ -67,7 +67,7 @@ export default function HowItWorksPage() {
           </p>
         </Card>
 
-        <Card className="p-6 rounded-none border-white/10 bg-card hover:border-accent/50 transition-colors tech-border h-full gradient-hover-card">
+              <Card className="p-6 rounded-none border-white/10 bg-card transition-colors tech-border h-full gradient-hover-card">
           <Shield className="w-6 h-6 mb-4 text-accent" />
           <h3 className="font-display font-bold text-lg mb-2">@secure-input/wasm</h3>
           <p className="text-muted-foreground text-xs leading-relaxed">

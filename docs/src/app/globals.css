@@ -201,12 +201,44 @@
     background-color: var(--color-accent);
   }
 
+  @keyframes border-gradient-spin {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
   .gradient-hover-card {
     position: relative;
     z-index: 1;
     overflow: hidden;
   }
   
+  /* Animated Stroke / Border */
+  .gradient-hover-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px; /* Stroke thickness */
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--color-accent) 20%,
+      var(--color-accent) 80%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  /* Soft Radial Glow */
   .gradient-hover-card::after {
     content: '';
     position: absolute;
@@ -220,6 +252,11 @@
     transition: opacity 0.4s ease, transform 0.4s ease;
     transform: translate(20px, 20px) scale(0.8);
     pointer-events: none;
+  }
+
+  .gradient-hover-card:hover::before {
+    opacity: 1;
+    animation: border-gradient-spin 3s ease-in-out infinite;
   }
 
   .gradient-hover-card:hover::after {
