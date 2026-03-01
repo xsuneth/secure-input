@@ -59,7 +59,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-20 pb-20 md:pt-32 md:pb-32 overflow-hidden">
         <div className="hero-glow-bg pointer-events-none"></div>
         <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center">
           <motion.div
@@ -101,7 +101,7 @@ export default function Home() {
               </Button>
             </motion.div>
             
-            <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="mt-20 flex items-center justify-center gap-8 text-sm font-display text-muted-foreground uppercase tracking-widest">
+            <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="mt-16 md:mt-24 flex items-center justify-center gap-8 text-sm font-display text-muted-foreground uppercase tracking-widest">
               <div className="flex items-center gap-2"><Check className="w-4 h-4 text-accent" /> ~30KB Gzipped</div>
               <div className="hidden sm:flex items-center gap-2"><Check className="w-4 h-4 text-accent" /> Zero Dependencies</div>
               <div className="hidden md:flex items-center gap-2"><Check className="w-4 h-4 text-accent" /> Type Safe</div>
