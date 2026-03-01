@@ -128,7 +128,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-6">
             <motion.div variants={FADE_UP_ANIMATION_VARIANTS}>
-              <Card className="h-full p-8 rounded-none border-white/10 bg-card hover:border-accent/50 transition-colors tech-border">
+              <Card className="h-full p-8 rounded-none border-white/10 bg-card hover:border-accent/50 transition-colors tech-border gradient-hover-card">
                 <Cpu className="w-8 h-8 mb-6 text-accent" />
                 <h3 className="font-display font-bold text-xl mb-3">WASM Encryption</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -138,7 +138,7 @@ export default function Home() {
             </motion.div>
             
             <motion.div variants={FADE_UP_ANIMATION_VARIANTS}>
-              <Card className="h-full p-8 rounded-none border-white/10 bg-card hover:border-accent/50 transition-colors tech-border">
+              <Card className="h-full p-8 rounded-none border-white/10 bg-card hover:border-accent/50 transition-colors tech-border gradient-hover-card">
                 <Shield className="w-8 h-8 mb-6 text-accent" />
                 <h3 className="font-display font-bold text-xl mb-3">Worker Isolation</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -148,7 +148,7 @@ export default function Home() {
             </motion.div>
 
             <motion.div variants={FADE_UP_ANIMATION_VARIANTS}>
-              <Card className="h-full p-8 rounded-none border-white/10 bg-card hover:border-accent/50 transition-colors tech-border">
+              <Card className="h-full p-8 rounded-none border-white/10 bg-card hover:border-accent/50 transition-colors tech-border gradient-hover-card">
                 <FileCode2 className="w-8 h-8 mb-6 text-accent" />
                 <h3 className="font-display font-bold text-xl mb-3">Framework Agnostic</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
