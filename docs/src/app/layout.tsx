@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Spline_Sans_Mono, Hanken_Grotesk } from "next/font/google";
+import { PostHogProvider } from "@/providers/PostHogProvider";
 import "./globals.css";
 
 const displayFont = Spline_Sans_Mono({
+
   subsets: ["latin"],
   variable: "--font-display",
   weight: ["400", "700"],
@@ -49,7 +51,9 @@ export default function RootLayout({
       <body
         className={`min-h-screen bg-background font-body antialiased ${bodyFont.variable} ${displayFont.variable}`}
       >
-        {children}
+        <PostHogProvider>
+          {children}
+        </PostHogProvider>
       </body>
     </html>
   );
