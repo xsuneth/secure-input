@@ -1,5 +1,10 @@
 {
   "buildCommand": "npm run build",
   "installCommand": "npm install",
+<<<<<<< HEAD
   "framework": "nextjs"
+=======
+  "framework": "nextjs",
+  "ignoreCommand": "exit 0"
+>>>>>>> dd2351a2944e00e54590eaf9e05a8c772a07e350
 }
