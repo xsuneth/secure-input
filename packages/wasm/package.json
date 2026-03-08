@@ -9,7 +9,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/xSuneth/secure-input.git",
+    "url": "https://github.com/xsuneth/secure-input.git",
     "directory": "packages/wasm"
   },
   "keywords": [
