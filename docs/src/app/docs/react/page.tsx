@@ -1,5 +1,20 @@
+import type { Metadata } from "next";
 import { CodeBlock } from "@/components/CodeBlock";
 import { DocsPagination } from "@/components/DocsPagination";
+
+export const metadata: Metadata = {
+  title: "React Implementation",
+  description: "Integrate Secure Input in React and Next.js using the SecureInput component or useSecureInput hook.",
+  alternates: {
+    canonical: "/docs/react",
+  },
+  openGraph: {
+    title: "Secure Input for React",
+    description: "Implementation guide for @secure-input/react with component and hook examples.",
+    url: "https://secure-input.vercel.app/docs/react",
+    type: "article",
+  },
+};
 
 export default function ReactPage() {
   return (

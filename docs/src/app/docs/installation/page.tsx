@@ -1,6 +1,20 @@
-import { CodeBlock } from "@/components/CodeBlock";
+import type { Metadata } from "next";
 import { PackageManagerCode } from "@/components/PackageManagerCode";
 import { DocsPagination } from "@/components/DocsPagination";
+
+export const metadata: Metadata = {
+  title: "Installation",
+  description: "Install Secure Input packages for React, Next.js, or framework-agnostic JavaScript projects.",
+  alternates: {
+    canonical: "/docs/installation",
+  },
+  openGraph: {
+    title: "Install Secure Input",
+    description: "Get started with @secure-input/react or @secure-input/core in minutes.",
+    url: "https://secure-input.vercel.app/docs/installation",
+    type: "article",
+  },
+};
 
 export default function InstallationPage() {
   return (

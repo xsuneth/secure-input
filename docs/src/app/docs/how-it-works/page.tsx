@@ -1,6 +1,21 @@
+import type { Metadata } from "next";
 import { DocsPagination } from "@/components/DocsPagination";
 import { Cpu, Shield, FileCode2 } from "lucide-react";
 import { Card } from "@/components/ui/card";
+
+export const metadata: Metadata = {
+  title: "How It Works",
+  description: "Understand Secure Input architecture: keystroke capture, worker isolation, and WASM encryption flow.",
+  alternates: {
+    canonical: "/docs/how-it-works",
+  },
+  openGraph: {
+    title: "How Secure Input Works",
+    description: "Architecture walkthrough of worker-based isolation and WASM-powered encryption.",
+    url: "https://secure-input.vercel.app/docs/how-it-works",
+    type: "article",
+  },
+};
 
 export default function HowItWorksPage() {
   return (

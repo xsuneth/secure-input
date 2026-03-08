@@ -1,5 +1,20 @@
+import type { Metadata } from "next";
 import { CodeBlock } from "@/components/CodeBlock";
 import { DocsPagination } from "@/components/DocsPagination";
+
+export const metadata: Metadata = {
+  title: "Vanilla JavaScript Core",
+  description: "Use @secure-input/core in Vanilla JS, Vue, Svelte, Angular, or custom frontend stacks.",
+  alternates: {
+    canonical: "/docs/vanilla",
+  },
+  openGraph: {
+    title: "Secure Input for Vanilla JavaScript",
+    description: "Framework-agnostic implementation guide for @secure-input/core.",
+    url: "https://secure-input.vercel.app/docs/vanilla",
+    type: "article",
+  },
+};
 
 export default function VanillaPage() {
   return (
@@ -64,7 +79,7 @@ setupSecureCheckout();`}
 
       <h2 className="font-display mt-16">Cleanup & Memory Management</h2>
       <p>
-        Because this library spans up a dedicated Web Worker, it consumes memory. If you are building a Single Page Application (SPA), it is critical to destroy the instance when the component unmounts or the user navigates away to prevent memory leaks.
+        Because this library spins up a dedicated Web Worker, it consumes memory. If you are building a Single Page Application (SPA), it is critical to destroy the instance when the component unmounts or the user navigates away to prevent memory leaks.
       </p>
 
       <CodeBlock 
