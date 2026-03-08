@@ -5,7 +5,8 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Shield, Cpu, FileCode2, Lock, GitBranch, ArrowRight, Check, Copy, BookText } from "lucide-react";
+import { Shield, Cpu, FileCode2, GitBranch, ArrowRight, Check, Copy, BookText } from "lucide-react";
+import Image from "next/image";
 import { CpuIcon } from "@/components/icons/CpuIcon";
 import { ShieldIcon } from "@/components/icons/ShieldIcon";
 import { FileCodeIcon } from "@/components/icons/FileCodeIcon";
@@ -135,6 +136,60 @@ export default function Home() {
   const [copied, setCopied] = useState(false);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [selectedFw, setSelectedFw] = useState("react");
+  const softwareStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Secure Input",
+    applicationCategory: "DeveloperApplication",
+    operatingSystem: "Web",
+    description:
+      "WASM-powered input obfuscation library for React and Vanilla JS to reduce client-side coupon scraping.",
+    url: "https://secure-input.vercel.app",
+    softwareVersion: "1.0.0",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+  };
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How do I block coupon-scraping extensions from reading checkout inputs?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Secure Input isolates plaintext handling in a Web Worker and exposes encrypted payloads to the main thread, which reduces direct DOM scraping opportunities.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Does Secure Input support React and Next.js?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Use @secure-input/react for components and hooks, or use @secure-input/core for framework-agnostic JavaScript.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can I use Secure Input with vanilla JavaScript?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. The @secure-input/core package is framework-agnostic and works with vanilla JavaScript as well as Vue, Svelte, and Angular.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is this full security or obfuscation?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Secure Input raises the bar against automated scraping but should be combined with server-side validation, key management, and rate limiting.",
+        },
+      },
+    ],
+  };
 
   const handleCopy = () => {
     posthog.capture("hero_command_copied");
@@ -146,11 +201,21 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-accent-foreground font-sans">
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+      />
       {/* Navigation */}
       <nav className="border-b border-white/5 bg-background/80 backdrop-blur-md sticky top-0 z-50">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Lock className="w-5 h-5 text-accent" />
+            <Image src="/secure-input.svg" alt="Secure Input Logo" width={28} height={31} className="h-7 w-auto" />
             <span className="font-display font-bold tracking-tight text-lg">Secure Input</span>
           </div>
           <div className="flex items-center gap-4">
@@ -160,7 +225,7 @@ export default function Home() {
                 Docs
               </Button>
             </Link>
-            <Link href="https://github.com/xSuneth/secure-input" target="_blank">
+            <Link href="https://github.com/xSuneth/secure-input" target="_blank" rel="noopener noreferrer">
               <Button variant="ghost" size="sm" className="font-display text-xs uppercase tracking-wider">
                 <GitBranch className="w-4 h-4 mr-2" />
                 GitHub
@@ -635,7 +700,7 @@ export default function Home() {
       <footer className="border-t border-white/10 py-12 bg-black">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            <Lock className="w-4 h-4 text-muted-foreground" />
+            <Image src="/secure-input.svg" alt="Secure Input Logo" width={18} height={20} className="h-5 w-auto opacity-70" />
             <span className="font-display font-bold text-sm text-muted-foreground">Secure Input</span>
           </div>
           <p className="text-xs text-muted-foreground font-display uppercase tracking-widest">

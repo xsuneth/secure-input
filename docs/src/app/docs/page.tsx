@@ -1,5 +1,19 @@
-import { CodeBlock } from "@/components/CodeBlock";
+import type { Metadata } from "next";
 import { DocsPagination } from "@/components/DocsPagination";
+
+export const metadata: Metadata = {
+  title: "Introduction",
+  description: "Learn how Secure Input prevents browser extensions from scraping coupon and promo codes using WebAssembly and Web Workers.",
+  alternates: {
+    canonical: "/docs",
+  },
+  openGraph: {
+    title: "Secure Input Docs: Introduction",
+    description: "Overview of Secure Input and how it protects checkout inputs from client-side scraping.",
+    url: "https://secure-input.vercel.app/docs",
+    type: "article",
+  },
+};
 
 export default function DocsPage() {
   return (

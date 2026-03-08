@@ -1,9 +1,22 @@
+import type { Metadata } from "next";
 import { DocsSidebar } from "@/components/DocsSidebar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Lock, GitBranch, BookText } from "lucide-react";
+import { Menu, GitBranch, BookText } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Documentation",
+    template: "%s | Secure Input Docs",
+  },
+  description: "Secure Input documentation for installation, architecture, React integration, Vanilla JS usage, and server-side decryption.",
+  alternates: {
+    canonical: "/docs",
+  },
+};
 
 export default function DocsLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -21,7 +34,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
               </SheetTrigger>
               <SheetContent side="left" className="w-[300px] border-white/10 bg-background sm:w-[400px]">
                 <div className="flex items-center gap-2 mb-8 mt-4">
-                  <Lock className="h-5 w-5 text-accent" />
+                  <Image src="/secure-input.svg" alt="Secure Input Logo" width={22} height={24} className="h-6 w-auto" />
                   <span className="font-display text-lg font-bold tracking-tight">Secure Input</span>
                 </div>
                 <DocsSidebar />
@@ -30,7 +43,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
           </div>
 
           <Link href="/" className="flex items-center gap-2 mr-auto">
-            <Lock className="h-5 w-5 text-accent" />
+            <Image src="/secure-input.svg" alt="Secure Input Logo" width={22} height={24} className="h-6 w-auto" />
             <span className="font-display text-lg font-bold tracking-tight hidden sm:inline-block">Secure Input</span>
           </Link>
           
@@ -41,7 +54,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                 Docs
               </Button>
             </Link>
-            <Link href="https://github.com/xSuneth/secure-input" target="_blank">
+            <Link href="https://github.com/xSuneth/secure-input" target="_blank" rel="noopener noreferrer">
               <Button variant="ghost" size="sm" className="font-display text-xs uppercase tracking-wider">
                 <GitBranch className="mr-2 h-4 w-4" />
                 GitHub

@@ -1,6 +1,21 @@
+import type { Metadata } from "next";
 import { CodeBlock } from "@/components/CodeBlock";
 import { Shield } from "lucide-react";
 import { DocsPagination } from "@/components/DocsPagination";
+
+export const metadata: Metadata = {
+  title: "Server-Side Decryption",
+  description: "Decrypt Secure Input payloads on your backend using ChaCha20Poly1305 and robust key management practices.",
+  alternates: {
+    canonical: "/docs/server",
+  },
+  openGraph: {
+    title: "Secure Input Server-Side Decryption",
+    description: "Backend implementation and key-management guidance for decrypting encrypted payloads safely.",
+    url: "https://secure-input.vercel.app/docs/server",
+    type: "article",
+  },
+};
 
 export default function ServerPage() {
   return (

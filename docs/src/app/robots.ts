@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
+    host: 'https://secure-input.vercel.app',
     sitemap: 'https://secure-input.vercel.app/sitemap.xml',
   };
 }
