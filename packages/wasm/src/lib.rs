@@ -1,6 +1,6 @@
 use chacha20poly1305::{
     aead::{Aead, KeyInit},
-    ChaCha20Poly1305, Nonce, Key,
+    ChaCha20Poly1305, Nonce,
 };
 use wasm_bindgen::prelude::*;
 use base64::{Engine as _, engine::general_purpose};

@@ -4,7 +4,7 @@
   "private": true,
   "description": "WASM-powered input obfuscation library for preventing client-side scraping",
   "scripts": {
-    "build": "pnpm -r --filter \"./packages/*\" --filter \"!./packages/examples\" build",
+    "build": "pnpm -r --filter @secure-input/wasm --filter @secure-input/core --filter @secure-input/react build",
     "build:wasm": "pnpm --filter @secure-input/wasm build",
     "build:core": "pnpm --filter @secure-input/core build",
     "build:react": "pnpm --filter @secure-input/react build",
