@@ -1,5 +1,12 @@
 # @secure-input/core
 
+## 0.2.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @secure-input/wasm@0.2.3
+
 ## 0.2.0
 
 ### Minor Changes

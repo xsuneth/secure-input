@@ -1,6 +1,6 @@
 {
   "name": "@secure-input/wasm",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "WASM encryption module for secure-input library",
   "type": "module",
   "main": "./pkg/secure_input_wasm.js",
